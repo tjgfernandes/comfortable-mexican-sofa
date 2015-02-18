@@ -1,0 +1,240 @@
+# encoding: utf-8
+pt:
+  attributes:
+    label: Nome
+    slug: Identificador
+    parent_id: Pai
+    content: Conteúdo
+    identifier: Identificador
+    full_path: Caminho completo
+  activerecord:
+    models:
+      comfy/cms/site: Site
+      comfy/cms/layout: Layout
+      comfy/cms/page: Página
+      comfy/cms/snippet: Fragmento
+      comfy/cms/file: Ficheiro
+    attributes:
+      comfy/cms/site:
+        identifier: Identificador
+        hostname: Nome do Host
+        path: Caminho
+        locale: Idioma
+        is_mirrored: Em espelho
+      comfy/cms/layout:
+        identifier: Identificador
+        label: Nome do Layout
+        app_layout: Layout da Aplicação
+        parent_id: Layout Pai
+        css: Stylesheet
+        js: Javascript
+      comfy/cms/page:
+        label: Título
+        layout_id: Layout
+        slug: Identificador
+        target_page_id: Redirecionar para a Página
+        is_published: Publicada
+      comfy/cms/file:
+        file: Ficheiro
+        description: Descrição
+      comfy/cms/snippet:
+        identifier: Identificador
+        
+  comfy:
+    cms:
+      content:
+        site_not_found: Site Não Encontrado
+        layout_not_found: Layout Não Encontrado
+        page_not_found: Página Não Encontrada
+        
+    admin:
+      cms:
+        base:
+          site_not_found: Site não encontrado
+          fixtures_enabled: As Fixtures do CMS estão ativados. Todas as mudanças feitas aqui serão descartadas.
+          
+          sites: Sites
+          layouts: Layouts
+          pages: Páginas
+          snippets: Fragmentos
+          files: Ficheiros
+      
+        sites:
+          created: Site criado com sucesso.
+          creation_failure: Não foi possível criar site.
+          updated: Site atualizado com sucesso.
+          update_failure: Não foi possível atualizar site.
+          deleted: Site excluído com sucesso.
+          not_found: Site não encontrado.
+          
+          index:
+            title: Sites
+            new_link: Criar Novo Site
+            select: Selecionar Site
+            edit: Editar
+            delete: Excluir
+            are_you_sure: Tem a certeza que deseja excluir este site?
+          new:
+            title: Novo Site
+          edit:
+            title: Editando Site
+          form:
+            create: Criar Site
+            cancel: Cancelar
+            update: Atualizar Site
+            is_mirrored: Em espelho
+      
+        layouts:
+          created: Layout criado com sucesso.
+          creation_failure: Não foi possível criar Layout.
+          updated: Layout atualizado com sucesso.
+          update_failure: Não foi possível atualizar Layout.
+          deleted: Layout excluído com sucesso.
+          not_found: Layout não encontrado.
+          
+          index:
+            title: Layouts
+            new_link: Criar Novo Layout
+          index_branch:
+            add_child_layout: Adicionar Layout Filho
+            edit: Editar
+            delete: Excluir
+            are_you_sure: Tem certeza?
+          new:
+            title: Novo Layout
+          edit:
+            title: Editando Layout
+            revision: &revision
+              zero: '%{count} Revisão'
+              one: '%{count} Revisão'
+              few: '%{count} Revisão'
+              many: '%{count} Revisão'
+              other: '%{count} Revisão'
+          form:
+            select_parent_layout: Selecione o Layout Pai
+            select_app_layout: Selecione o Layout da Aplicação
+            create: Criar Layout
+            cancel: Cancelar
+            update: Atualizar Layout
+      
+        pages:
+          created: Página criada com sucesso.
+          creation_failure: Não foi possível criar página.
+          updated: Página atualizada com sucesso.
+          update_failure: Não foi possível atualizar página.
+          deleted: Página excluída com sucesso.
+          not_found: Página não encontrada.
+          layout_not_found: "Não foi encontrado um Layout. foi encontrado. Por favor, crie um."
+          
+          index:
+            title: Páginas
+            new_link: Criar Nova Página
+          index_branch:
+            toggle: Alterar
+            add_child_page: Adicionar Página Filha
+            edit: Editar
+            delete: Excluir
+            are_you_sure: Tem certeza?
+          new:
+            title: Nova Página
+          edit:
+            title: Editando Página
+            revision:
+              <<: *revision
+          form:
+            select_target_page: Não Redirecionar
+            preview: Pré-visualização
+            create: Criar Página
+            cancel: Cancelar
+            update: Atualizar Página
+            is_published: Publicada
+            choose_link: Escolha...
+          form_blocks:
+            no_tags: |-
+              O Layout não possui tags de conteúdo definidas.<br/>
+              Edite o conteúdo e inclua uma tag de página ou de campo. Por exemplo: <code>{{cms:page:content}}</code>
+      
+        snippets:
+          created: Fragmento criado com sucesso.
+          creation_failure: Não foi possível criar fragmento.
+          updated: Fragmento atualizado com sucesso.
+          update_failure: Não foi possível atualizar fragmento.
+          deleted: Fragmento excluído com sucesso.
+          not_found: Fragmento não encontrado.
+          
+          index:
+            title: Fragmentos
+            new_link: Criar Novo Fragmento
+            edit: Editar
+            delete: Excluir
+            are_you_sure: Tem certeza?
+          new:
+            title: Novo Fragmento
+          edit:
+            title: Editando Fragmento
+            revision:
+              <<: *revision
+          form:
+            create: Criar Fragmento
+            cancel: Cancelar
+            update: Atualizar Fragmento
+
+        revisions:
+          reverted: Conteúdo revertido com sucesso.
+          record_not_found: Registo não encontrado.
+          not_found: Revisão não encontrada.
+          
+          show:
+            title: Revisões de
+            revision: Revisão
+            full_path: Caminho completo
+            slug: Identificador
+            update: Atualizar para esta revisão
+            content: Conteúdo
+            changes: Alterações
+            previous: Anterior
+            current: Atual
+      
+        files:
+          created: Ficheiro enviado com sucesso.
+          creation_failure: Não foi possível enviar Ficheiro.
+          updated: Ficheiro atualizado com sucesso.
+          update_failure: Não foi possível atualizar Ficheiro.
+          deleted: Ficheiro excluído com sucesso.
+          not_found: Ficheiro não encontrado.
+          
+          index:
+            title: Ficheiros
+            new_link: Enviar Novo Ficheiro
+            edit: Editar
+            delete: Excluir
+            are_you_sure: Tem certeza?
+            button: Enviar Ficheiros
+          new:
+            title: Novo Ficheiro
+          edit:
+            title: Editando Ficheiro
+          form:
+            current_file: Ficheiro Atual
+            create: Enviar Ficheiro
+            cancel: Cancelar
+            update: Atualizar Ficheiro
+          page_form:
+            are_you_sure: Tem certeza?
+          file:
+            are_you_sure: Tem certeza?
+            
+        categories:
+          index:
+            label: Categorias
+            edit: Editar
+            done: Pronto
+            all: Todas
+            add: Adicionar
+            add_placeholder: Adicione uma Categoria
+          show:
+            are_you_sure: Tem certeza?
+          edit:
+            save: Guardar
+          form:
+            label: Categorias

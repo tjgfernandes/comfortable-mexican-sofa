@@ -101,6 +101,7 @@ class ComfortableMexicanSofa::Configuration
       'nb'    => 'Norsk',
       'nl'    => 'Nederlands',
       'pl'    => 'Polski',
+      'pt'    => 'Português Portugal',
       'pt-BR' => 'Português Brasileiro',
       'ru'    => 'Русский',
       'sv'    => 'Svenska',
