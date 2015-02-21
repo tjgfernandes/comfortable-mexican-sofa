@@ -3305,7 +3305,7 @@
 
 					var width = Math.round(height * this.image.resizeHandle.ratio);
 
-					if (height < 50 || width < 100) return;
+					if (height < 30 || width < 50) return;
 
 		            this.image.resizeHandle.el.width(width);
 		            this.image.resizeHandle.el.height(this.image.resizeHandle.el.width()/this.image.resizeHandle.ratio);
